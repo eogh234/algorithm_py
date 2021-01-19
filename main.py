@@ -1,13 +1,17 @@
 n, k = map(int, input().split())
 
+data = list()
 count = 0
 
-while n > 1:
-    if n % k == 0:
-        n /= k
-        count += 1
-    else:
-        n -= 1
-        count += 1
+for i in range(n):
+    data.append(int(input()))
+
+while k > 0:
+    for num in reversed(data):
+        if num > k:
+            continue
+        else:
+            count += int(k / num)
+            k -= (num * int(k / num))
 
 print(count)
