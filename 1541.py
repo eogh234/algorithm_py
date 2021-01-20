@@ -41,7 +41,3 @@ else:
     result += sum
 
 print(result)
-
-
-
-
