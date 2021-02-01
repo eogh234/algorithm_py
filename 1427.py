@@ -4,7 +4,7 @@ n = sys.stdin.readline().rstrip()
 
 data = []
 for ch in n:
-    data.append(int(ch))
+    data.append(ch)
 
 data.sort(reverse=True)
 
