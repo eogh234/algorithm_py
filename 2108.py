@@ -35,4 +35,4 @@ else:
 
 print(mostFreq - 4000)
 
-print((data[-1] - 4000) - (data[0] - 4000))
+print(data[-1] - data[0])
