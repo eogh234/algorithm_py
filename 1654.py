@@ -14,7 +14,7 @@ while start <= end:
     count = 0
     mid = (start + end) // 2
     if mid == 0:
-        result = 1
+        result = end
         break
     for l in data:
         count += l // mid
