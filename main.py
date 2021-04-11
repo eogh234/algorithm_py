@@ -1,21 +1,18 @@
 n = int(input())
 
-d = []
+data = [0] * (n + 1)
+for i in range(n):
+    data[i + 1] = int(input())
 
-for i in range(n + 1):
-    d.append([0] * 11)
+d = [0] * (n + 1)
 
-for i in range(1, 10):
-    d[1][i] = 1
+d[1] = data[1]
+if n > 1:
+    d[2] = data[1] + data[2]
 
-for i in range(2, n + 1):
-    d[i][0] = d[i - 1][1]
-    for j in range(1, 10):
-        d[i][j] = (d[i - 1][j - 1] + d[i - 1][j + 1]) % 1000000000
+if n > 2:
+    for i in range(3, n + 1):
+        d[i] = max(d[i - 2] + data[i], d[i - 3] + data[i - 1] + data[i])
+        d[i] = max(d[i - 1], d[i])
 
-result = 0
-
-for i in range(0, 11):
-    result += d[n][i]
-
-print(result % 1000000000)
+print(d[n])
