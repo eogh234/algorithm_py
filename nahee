@@ -1,0 +1,6 @@
+N,X=dict(int,input().split())
+b=[]
+for i in range(10):
+    a=int(input())
+    if a <X:
+        b.append(a)
