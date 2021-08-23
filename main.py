@@ -1,15 +1,17 @@
+from itertools import combinations
 data = []
+for _ in range(9):
+    data.append(int(input()))
 
-for _ in range(10):
-    data.append((map(int, input().split())))
-
-people = 0
 answer = []
 
-for off, on in data:
-    people += on - off
+cases = list(combinations(data, 7))
 
-    if on > off:
-        answer.append(people)
+for case in cases:
+    if sum(case) == 100:
+        answer = list(case)
+        answer.sort()
+        break
 
-print(max(answer))
+for num in answer:
+    print(num)
